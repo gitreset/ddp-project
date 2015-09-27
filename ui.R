@@ -1,4 +1,6 @@
 library(shiny)
+library(mime)
+library(jsonlite)
 #
 shinyUI(fluidPage(
     

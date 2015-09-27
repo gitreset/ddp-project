@@ -3,7 +3,7 @@ Easy BMI Calculator: A Shiny App
 author: Your Friendly Courserian
 date: 2015-09-27
 font-family: 'Helvetica'
-transition: fade
+transition: rotate
 transition-speed: slow
 
 Purpose of the App
@@ -18,11 +18,11 @@ Inputs and Model
 
 The two inputs to the BMI calculator are body weight (in pounds) and height (in inches).
 
-The formula for calculating BMI with these two inputs is:
+The heart of server.R for calculating BMI with these two inputs is the R expression:
 ```
-BMI = 703 * weight / height^2
+bmi <- function (wt, ht){703*wt/(ht*ht)}
 ```
-where weight is in lbs and height is in inches.
+where `wt` is weight in lbs and `ht` is height in inches.
 
 Documentation
 ========================================================
@@ -37,6 +37,6 @@ Further Improvements
 ========================================================
 
 This BMI calculator may be improved with additional features, including:
-- An option to give input in SI units (kg & m), using a radio button
+- An option to give input in SI units (kg & cm), using a radio button
 - Displaying a plot of where the BMI for a given user input lies on the height-weight spectrum
 - Demarcating the regions of underweight/normal/overweight/obese using different colors.
